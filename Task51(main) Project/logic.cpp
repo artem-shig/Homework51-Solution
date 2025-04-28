@@ -12,22 +12,24 @@ int get_max_value_all_sorted_row(int** matrix, int n, int m) {
 	{
 		
 
-		if (matrix[i][0] < matrix[i][1]) {
-			begin_ascending = true;
-			maxValueRow = matrix[i][1];
-		}
-		else if (matrix[i][0] > matrix[i][1]) {
-			begin_ascending = false;
-			maxValueRow = matrix[i][0];
-		}
-		else {
-			continue;
-		}
+		//if (matrix[i][0] < matrix[i][1]) {
+		//	begin_ascending = true;
+		//	maxValueRow = matrix[i][1];
+		//}
+		//else if (matrix[i][0] > matrix[i][1]) {
+		//	begin_ascending = false;
+		//	maxValueRow = matrix[i][0];
+		//}
+		//else {
+		//	continue;
+		//}
 		
-		for (int j = 1; j < m - 1; j++)
+		begin_ascending = matrix[i][0] < matrix[i][1];
+
+		for (int j = 0; j < m - 1; j++)
 		{
 	
-			if (maxValueRow < *(matrix + i)[j + 1]) {
+			if (maxValueRow < matrix[i][j + 1]) {
 				current_ascending = true;
 				maxValueRow = matrix[i][j + 1];
 			}
